@@ -1,0 +1,13 @@
+<mvc:View controllerName="alfagroup.sapui5.controller.App"
+ xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc">
+<!--<Text id="_IDGenText" text="Hello World0000"></Text>-->
+<Button id="_IDGenButton" text="{i18n>showHelloButtonText}" press=" .onShowHello"></Button>
+<Input id="_IDGenInput" value ="{/recipient/name}"
+description="Hello {/recipient/name}"
+valueLiveUpdate="true"
+width="60%"
+
+>
+
+</Input>
+</mvc:View>
