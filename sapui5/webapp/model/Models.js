@@ -1,8 +1,5 @@
 sap.ui.define([
-
     "sap/ui/model/json/JSONModel"
-
-
 ],
     /**
      * 
@@ -24,7 +21,7 @@ sap.ui.define([
 
                 return new JSONModel(oData);
             }
-            }
+            };
 
         });
 

@@ -2,7 +2,8 @@
 sap.ui.define([
     "sap/ui/core/UIComponent",
     "alfagroup/sapui5/model/Models",
-    "sap/ui/model/resource/ResourceModel"
+    "sap/ui/model/resource/ResourceModel",
+    "./controller/HelloDialog"
 ],
 
     /**
@@ -10,7 +11,7 @@ sap.ui.define([
   
        *
        */
-    function (UIComponent, Models, ResourceModel) {
+    function (UIComponent, Models, ResourceModel,HelloDialog) {
 
         return UIComponent.extend("alfagroup.sapui5.Component", {
 
@@ -39,9 +40,22 @@ sap.ui.define([
                 var i18nModel = new ResourceModel({ bundleName: "alfagroup.sapui5.i18n.i18n" });
                 this.setModel(i18nModel, "i18n");
 
+                this._helloDialog = new HelloDialog(this.getRootControl());
+            },
+
+            exit: function(){
+                this._helloDialog.destroy();
+                delete this._helloDialog
+            },
+            openHelloDialog: function(){
+                this._helloDialog.open();
+
+
             }
+
         });
 
 
 
-    });
+    }
+);
